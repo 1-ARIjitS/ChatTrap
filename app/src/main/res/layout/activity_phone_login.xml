@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bacv"
     tools:context=".PhoneLogin">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
     <ImageView
         android:id="@+id/verify_sms_sent_image"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.10"
+        android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/sms" />
-
     <TextView
         android:id="@+id/verify_phone"
         android:layout_width="wrap_content"
@@ -26,36 +28,30 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verify_sms_sent_image"
-        app:layout_constraintVertical_bias="0.05" />
+        android:layout_below="@id/verify_sms_sent_image"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/verify_sms_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_centerHorizontal="true"
         android:text="ChatTrap will send an SMS message to verify your phone number"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verify_phone"
-        app:layout_constraintVertical_bias="0.02" />
+        android:layout_below="@id/verify_phone"
+        android:layout_marginTop="24dp"
+        />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/verify_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="16dp"
+        android:layout_below="@id/verify_sms_message"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/verify_sms_message"
-        app:layout_constraintVertical_bias="0.110000014">
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,5 +93,6 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
